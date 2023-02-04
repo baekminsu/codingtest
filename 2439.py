@@ -1,8 +1,7 @@
-n = int(input())
-
-for i in range(1,n+1):
-    for j in range(i,n):
-        print(" ", end='')
-    for j in range(0,i):
-        print("*", end='')    
-    print("")
+a,b = map(int,input().split())
+print(a+b)
+while a != 0 and b != 0 :
+    a,b = map(int,input().split())
+    if a !=0 and b!= 0:
+        break
+    print(a+b)

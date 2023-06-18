@@ -10,7 +10,7 @@ typedef struct Stack {
 }Stack;
 
 void push(Stack* s) {
-	if (s->top > 51) {
+	if (s->top >= 50) {
 		return;
 	}
 	s->top++;
@@ -40,12 +40,18 @@ int main() {
 	int check = 0;
 	scanf("%d", &T);
 
-	s.top = -1;
 
 	for (int i = 0; i < T; i++) {
+		s.top = -1;
 		check = 0;
 		getchar();
 		scanf("%s", input);
+
+		if (strlen(input) > 50) {
+			printf("NO\n");
+			continue;
+		}
+
 		for (int j = 0; j < strlen(input); j++) {
 			if (input[j] == '(') {
 				push(&s);
@@ -53,14 +59,16 @@ int main() {
 			else if (input[j] == ')') {
 				check = pop(&s);
 				if (check == 1) {
-					printf("NO\n");
 					check++;
 					break;
 				}
 			}
 		}
-		if (check == 0) {
+		if (check == 0 && s.top == -1) {
 			printf("YES\n");
+		}
+		else {
+			printf("NO\n");
 		}
 
 

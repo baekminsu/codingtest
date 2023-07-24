@@ -1,4 +1,4 @@
-A , B = map(int,input().split())
+A,B = map(int,input().split())
 
 if A < B:
     temp = B
@@ -6,7 +6,8 @@ if A < B:
     A = temp
 
 for i in range(1,B+1):
-    if(((A % i) == 0)  and ((B % i) ==0)):
+    if(((A % i) == 0) and ((B % i) ==0)):
         result = i
 
 print(result)
+print(A*B // result)

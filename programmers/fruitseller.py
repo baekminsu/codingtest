@@ -7,7 +7,16 @@ def solution(k, m, score):
         score.remove(max(score))
         if len(temp) == m:
             temp2.append(temp)
-            answer += (min(temp) * m)
             temp.clear()
+    for i in temp2:
+        if temp2.count(i) == 0:
+            answer += m * min(i)
+        elif temp2.count(i) > 0:
+            save = i
+            savecnt = temp2.count(i)
+            for j in range(savecnt):
+                
+
+
             
     return answer
